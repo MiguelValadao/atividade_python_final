@@ -1,0 +1,63 @@
+body {
+    background-color: #f4f6f9;
+}
+
+html[data-bs-theme="dark"] body {
+    background-color: #212529;
+}
+
+.status-pendente {
+    border-left: 6px solid #fdcb6e !important;
+}
+
+.status-andamento {
+    border-left: 6px solid #5b8def !important;
+}
+
+.status-concluida {
+    border-left: 6px solid #27ae60 !important;
+}
+
+.badge-pendente {
+    background-color: #ffeeba;
+    color: #7c5e00;
+}
+
+html[data-bs-theme="dark"] .badge-pendente {
+    background-color: #7c5e00;
+    color: #ffeeba;
+}
+
+.badge-andamento {
+    background-color: #cfe2ff;
+    color: #084298;
+}
+
+html[data-bs-theme="dark"] .badge-andamento {
+    background-color: #084298;
+    color: #cfe2ff;
+}
+
+.badge-concluida {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+html[data-bs-theme="dark"] .badge-concluida {
+    background-color: #0f5132;
+    color: #d1e7dd;
+}
+
+.frase-motivacional {
+    background-color: #eef3ff;
+    border-left: 6px solid #5b8def;
+}
+
+html[data-bs-theme="dark"] .frase-motivacional {
+    background-color: #2b3035;
+    border-color: #5b8def;
+}
+
+.card .text-muted {
+    white-space: pre-wrap;
+}
