@@ -92,9 +92,7 @@ def login_necessario():
 
 @app.route("/")
 def index():
-    if usuario_logado():
-        return redirect(url_for("dashboard"))
-    return redirect(url_for("login"))
+    return render_template("index.html", status_labels=STATUS_LABELS)
 
 
 @app.route("/registro", methods=["GET", "POST"])

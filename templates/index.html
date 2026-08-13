@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block titulo %}Painel de Tarefas{% endblock %}
+
+{% block conteudo %}
+<div class="row align-items-center g-5 py-5">
+    <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">
+            Organize suas tarefas de forma simples e produtiva
+        </h1>
+        <p class="lead text-muted">
+            Crie, acompanhe e conclua suas tarefas com um painel moderno,
+            filtrável e com gráficos de progresso. Tudo sincronizado na sua conta.
+        </p>
+        <div class="d-flex gap-3">
+            {% if session.get('usuario_id') %}
+            <a class="btn btn-primary btn-lg" href="{{ url_for('dashboard') }}">
+                <i class="bi bi-speedometer2 me-1"></i>Acessar meu painel
+            </a>
+            {% else %}
+            <a class="btn btn-primary btn-lg" href="{{ url_for('registro') }}">
+                <i class="bi bi-rocket-takeoff me-1"></i>Criar conta grátis
+            </a>
+            <a class="btn btn-outline-secondary btn-lg" href="{{ url_for('login') }}">
+                <i class="bi bi-box-arrow-in-right me-1"></i>Entrar
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="h5 mb-3"><i class="bi bi-list-check me-2"></i>Minhas tarefas</h2>
+                <div class="d-flex flex-column gap-2">
+                    <div class="d-flex align-items-center p-3 rounded status-pendente bg-light">
+                        <span class="badge badge-pendente me-2">Pendente</span>
+                        <span class="text-muted">Estudar Flask</span>
+                    </div>
+                    <div class="d-flex align-items-center p-3 rounded status-andamento bg-light">
+                        <span class="badge badge-andamento me-2">Em andamento</span>
+                        <span class="text-muted">Revisar apostila</span>
+                    </div>
+                    <div class="d-flex align-items-center p-3 rounded status-concluida bg-light">
+                        <span class="badge badge-concluida me-2">Concluída</span>
+                        <span class="text-muted">Criar painel de tarefas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 py-4">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <i class="bi bi-clipboard-check display-6 text-primary"></i>
+                <h3 class="h5 mt-3">Gestão completa</h3>
+                <p class="text-muted mb-0">Crie, edite, conclua e exclua tarefas com poucos cliques.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <i class="bi bi-bar-chart-fill display-6 text-success"></i>
+                <h3 class="h5 mt-3">Acompanhe o progresso</h3>
+                <p class="text-muted mb-0">Gráficos mostram a quantidade de tarefas por status em tempo real.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <i class="bi bi-moon-stars display-6 text-warning"></i>
+                <h3 class="h5 mt-3">Personalização</h3>
+                <p class="text-muted mb-0">Filtre por status e alterne para o modo escuro sempre que quiser.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
